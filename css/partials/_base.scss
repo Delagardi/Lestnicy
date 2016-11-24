@@ -1,0 +1,112 @@
+$widthPage: 1200px;
+$black: #32302f;
+$borderColor: #63492f;
+
+// Font Face Mixin start
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+// Font Face Mixin end
+%fontText {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 20px;
+  color: $black;
+}
+
+%fontHeaderTop {
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 24px;
+  color: $black;
+}
+
+%fontHeaderMiddle20px {
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 20px;
+  color: $black;
+}
+
+%fontHeaderMenu {
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 24px;
+  color: #fff;
+}
+
+%fontProductionHeader {
+  font-family: "BebasNeueBold", sans-serif;
+  font-size: 36px;
+  color: #fff;
+}
+
+%fontSliderHeader {
+  font-family: "Intro", sans-serif;  
+  font-size: 48px;
+  color: #fff;
+  font-weight: 100;
+}
+
+%fontSliderHeaderDesc {
+  font-family: "Intro", sans-serif;  
+  font-size: 28px;
+  color: #fff;
+  font-weight: 100;
+}
+
+%fontMainHeader {
+  font-family: "Intro", sans-serif;  
+  font-size: 28px;
+  color: $black;
+  font-weight: 100;
+}
+
+%fontMainHeaderSub {
+  font-family: "Intro", sans-serif;  
+  font-size: 24px;
+  color: $black;
+  font-weight: 100;
+}
+
+%fontProductionSubList {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+
+%fontTextBenefits {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  font-weight: medium;
+}
+
+%fontTextForm {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 18px;
+  color: #7d7d7d;
+  font-weight: medium;
+}
