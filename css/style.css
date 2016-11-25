@@ -389,7 +389,7 @@ body {
   font-size: 20px;
   color: #32302f; }
 
-.header-menu ul li a, .deal-list a, .benefits-content__list li h4, .footer-bottom-menu ul li a {
+.header-menu ul li a, .deal-list a, .benefits-content__list li h4, .footer-bottom-menu ul li a, .item-header__types li a {
   font-family: "BebasNeueBold", sans-serif;
   font-size: 24px;
   color: #fff; }
@@ -411,13 +411,13 @@ body {
   color: #fff;
   font-weight: 100; }
 
-.main-content h2, .benefits-content h2 {
+.main-content h2, .benefits-content h2, .item-header h2 {
   font-family: "Intro", sans-serif;
   font-size: 28px;
   color: #32302f;
   font-weight: 100; }
 
-.main-content h3 {
+.main-content h3, .item-content h3 {
   font-family: "Intro", sans-serif;
   font-size: 24px;
   color: #32302f;
@@ -439,6 +439,12 @@ body {
   font-family: "HelveticaRoman", sans-serif;
   font-size: 18px;
   color: #7d7d7d;
+  font-weight: medium; }
+
+.dropdown ul li a, .item-sidebar ul li a, .dropdown-sidebar ul li a {
+  font-family: "HelveticaRoman", sans-serif;
+  font-size: 18px;
+  color: #fff;
   font-weight: medium; }
 
 /*=======================================================*/
@@ -622,6 +628,102 @@ body {
   border-right: none;
   padding-right: 15px; }
 
+/*** Dropdown START ***/
+.dropdown-item {
+  position: relative; }
+
+.dropdown-item:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat; }
+
+.dropdown-item .dropdown-item:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat; }
+
+.dropdown-item ul li {
+  background: #32302f;
+  width: 390px; }
+
+/*2th level*/
+ul.dropdown li {
+  position: relative; }
+
+.dropdown,
+.dropdown ul {
+  padding: 0;
+  list-style-type: none; }
+
+.dropdown ul {
+  position: absolute;
+  z-index: 5;
+  margin-left: 0;
+  left: 0;
+  top: 53px;
+  display: none;
+  width: 355px;
+  padding: 0; }
+
+.dropdown ul li {
+  display: inline;
+  float: right;
+  width: 355px;
+  margin-right: 0; }
+
+.dropdown ul li a {
+  display: block;
+  width: 350px;
+  border-radius: 10px;
+  height: 40px;
+  margin: 10px 0 10px -15px;
+  background: url("../img/bg-wood.png") no-repeat;
+  background-position: center center;
+  border-bottom: 3px solid transparent; }
+
+.dropdown ul li a:hover {
+  background: lighter(#39393c, 20%); }
+
+.dropdown li:hover > ul {
+  display: block; }
+
+/*3th level*/
+.dropdown ul li ul {
+  padding: 0;
+  list-style-type: none; }
+
+.dropdown ul li ul {
+  position: absolute;
+  display: none;
+  width: 210px;
+  padding: 0; }
+
+.dropdown ul li ul li {
+  width: 215px; }
+
+.dropdown ul li ul li a {
+  display: block;
+  padding: 0 20px;
+  width: 200px;
+  margin-left: -15px; }
+
+.dropdown li ul li:hover ul {
+  top: 0;
+  left: 390px;
+  display: block; }
+
+.dropdown ul li:last-child a {
+  padding: 0 20px 0 15px; }
+
+/*Dropdown END*/
 /* SLIDER */
 .slider-bg {
   background: url("../img/bg-slider.jpg") no-repeat;
@@ -997,5 +1099,188 @@ input:focus, textarea:focus {
     .footer-bottom-menu ul li a {
       padding: 0 20px 0 15px;
       display: block; }
+
+/*ITEM PAGE*/
+.item-page {
+  background: #32302f; }
+
+.item-content {
+  max-width: 1200px;
+  margin: 0 auto; }
+  .item-content p {
+    padding: 20px 5px; }
+  .item-content h3 {
+    margin: 0 auto;
+    padding: 40px 0 20px;
+    position: relative;
+    width: 400px;
+    text-align: center; }
+
+.item-header {
+  min-height: 300px; }
+  .item-header h2 {
+    color: #fff;
+    margin: 0 auto;
+    padding: 140px 0 40px;
+    border-bottom: 2px solid #b27951;
+    position: relative;
+    width: 400px;
+    text-align: center; }
+    .item-header h2:before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 75px;
+      top: 40px;
+      left: 160px; }
+
+.item-header__text:before {
+  background: url("../img/sprite-icons.png") -300px -165px no-repeat; }
+
+.item-header__types {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0; }
+
+.item-header__types li {
+  margin: 5px 20px; }
+
+.item-header__types li a:hover {
+  color: #b27951; }
+
+#active-type {
+  color: #b27951; }
+
+.item-content__bg {
+  background: url("../img/bg-pattern.jpg"); }
+
+.item-content {
+  min-height: 500px;
+  margin: 0 auto; }
+
+/*Sidebar*/
+.item-sidebar {
+  width: 340px;
+  float: left; }
+
+.item-sidebar ul li {
+  display: inline;
+  float: right;
+  width: 320px;
+  margin-right: 0;
+  background: #32302f; }
+
+.item-sidebar ul li a {
+  display: block;
+  width: 320px;
+  border-radius: 10px;
+  padding: 5px 5px 5px 30px;
+  margin: 5px 0 5px -15px;
+  background: url("../img/bg-wood.png") no-repeat;
+  background-position: center center;
+  border-bottom: 3px solid transparent; }
+
+.item-sidebar ul li a:hover {
+  background: lighter(#39393c, 20%); }
+
+.item-sidebar li:hover > ul {
+  display: block; }
+
+/* SideBar dropwown */
+/*** Dropdown START ***/
+.dropdown-sidebar__item {
+  position: relative; }
+
+.dropdown-sidebar__item:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat; }
+
+.dropdown-sidebar__item .dropdown-sidebar__item:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat; }
+
+.dropdown-sidebar__item ul li {
+  background: #32302f;
+  width: 390px; }
+
+/*2th level*/
+ul.dropdown-sidebar li {
+  position: relative; }
+
+.dropdown-sidebar,
+.dropdown-sidebar ul {
+  padding: 0;
+  list-style-type: none; }
+
+.dropdown-sidebar ul {
+  position: absolute;
+  z-index: 5;
+  margin-left: 0;
+  left: 350px;
+  top: 0;
+  display: none;
+  width: 200px;
+  padding: 0; }
+
+.dropdown-sidebar ul li {
+  display: inline;
+  float: right;
+  width: 200px;
+  margin-right: 0; }
+
+.dropdown-sidebar ul li a {
+  display: block;
+  width: 200px;
+  border-radius: 10px;
+  margin: 5px 0 5px -15px;
+  background: url("../img/bg-wood.png") no-repeat;
+  background-position: center center;
+  border-bottom: 3px solid transparent; }
+
+.dropdown-sidebar ul li a:hover {
+  background: lighter(#39393c, 20%); }
+
+.dropdown-sidebar li:hover > ul {
+  display: block; }
+
+.item-text {
+  width: 800px;
+  float: left;
+  margin-left: 60px; }
+
+.item-content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.item-slider {
+  height: 255px;
+  margin: 20px 0; }
+
+.item-slider__list {
+  width: 800px;
+  margin-left: 41px; }
+
+.item-slider__list li {
+  width: 215px;
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff; }
+
+.item-slider__list li:last-child {
+  margin-right: 0px; }
+
+.item-slider__list li img {
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */

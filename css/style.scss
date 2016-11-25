@@ -216,6 +216,124 @@ body {
   padding-right: 15px;
 }
 
+/*** Dropdown START ***/
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-item:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat;
+}
+
+.dropdown-item .dropdown-item:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat;
+}
+
+.dropdown-item ul li {
+  background: $black;
+  width: 390px;
+}
+
+/*2th level*/
+
+ul.dropdown li {
+  position: relative;
+  // background: #39393c;
+}
+
+.dropdown,
+.dropdown ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.dropdown ul {
+  position: absolute;
+  z-index: 5; 
+  margin-left: 0;
+  left: 0;
+  top: 53px;
+  display: none;
+  width: 355px;
+  padding: 0;
+}
+
+.dropdown ul li {
+  display: inline;
+  float: right;
+  // width: 100%;
+  width: 355px;
+  margin-right: 0;
+}
+
+.dropdown ul li a {
+  @extend %fontTextDropdown;
+  display: block;
+  width: 350px;
+  border-radius: 10px;
+  height: 40px;
+  margin: 10px 0 10px -15px;
+  background: url("../img/bg-wood.png") no-repeat;
+  background-position: center center;
+  border-bottom: 3px solid transparent;
+}
+
+.dropdown ul li a:hover {
+  background: lighter(#39393c, 20%);
+}
+
+.dropdown li:hover > ul {
+  display: block;
+}
+
+/*3th level*/ 
+.dropdown ul li ul { 
+  padding: 0; 
+  list-style-type: none; 
+} 
+
+.dropdown ul li ul { 
+  position: absolute; 
+  display: none; 
+  width: 210px; 
+  padding: 0; 
+} 
+
+.dropdown ul li ul li {
+  width: 215px; 
+}
+
+.dropdown ul li ul li a { 
+  display: block; 
+  padding: 0 20px;
+  width: 200px;  
+  margin-left: -15px;
+} 
+
+.dropdown li ul li:hover ul { 
+  top: 0; 
+  left: 390px; 
+  display: block; 
+}
+
+.dropdown ul li:last-child a {
+  padding: 0 20px 0 15px; 
+}
+
+/*Dropdown END*/
+
 /* SLIDER */
 
 .slider-bg {
@@ -723,17 +841,237 @@ input:focus, textarea:focus {
   }
 }
 
+/*ITEM PAGE*/
+.item-page {
+  background: $black;
+}
+.item-content {
+  max-width: $widthPage;
+  margin: 0 auto;
+
+  
+  p {
+    padding: 20px 5px;
+  }
+  h3 {
+    @extend %fontMainHeaderSub;
+    margin: 0 auto;
+    padding: 40px 0 20px;
+    position: relative;
+    width: 400px;
+    text-align: center;
+  }
+}
+.item-header {
+  min-height: 300px;
+  h2 {
+    @extend %fontMainHeader;
+    color: #fff;
+    margin: 0 auto;
+    padding: 140px 0 40px;
+    border-bottom: 2px solid #b27951;
+    position: relative;
+    width: 400px;
+    text-align: center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 75px;
+      top: 40px;
+      left: 160px;
+    }
+  }
+}
+
+.item-header__text:before {
+  background: url("../img/sprite-icons.png") -300px -165px no-repeat;
+}
+
+.item-header__types {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.item-header__types li {
+  margin: 5px 20px;
+}
+
+.item-header__types li a {
+  @extend %fontHeaderMenu;
+
+  &:hover {
+    color: #b27951;
+  }
+}
+
+#active-type {
+  color: #b27951;
+}
 
 
+.item-content__bg {
+  background: url("../img/bg-pattern.jpg");
+}
 
+.item-content {
+  min-height: 500px;
+  margin: 0 auto;
+}
 
+/*Sidebar*/
 
+.item-sidebar {
+  width: 340px;
+  float: left;
+}
 
+.item-sidebar ul li {
+  display: inline;
+  float: right;
+  width: 320px;
+  margin-right: 0;
+  background: $black;
+}
 
+.item-sidebar ul li a {
+  @extend %fontTextDropdown;
+  display: block;
+  width: 320px;
+  border-radius: 10px;
+  padding: 5px 5px 5px 30px;
+  margin: 5px 0 5px -15px;
+  background: url("../img/bg-wood.png") no-repeat;
+  background-position: center center;
+  border-bottom: 3px solid transparent;
+}
 
+.item-sidebar ul li a:hover {
+  background: lighter(#39393c, 20%);
+}
 
+.item-sidebar li:hover > ul {
+  display: block;
+}
 
+/* SideBar dropwown */
+/*** Dropdown START ***/
+.dropdown-sidebar__item {
+  position: relative;
+}
 
+.dropdown-sidebar__item:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat;
+}
+
+.dropdown-sidebar__item .dropdown-sidebar__item:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 7px;
+  width: 10px;
+  height: 16px;
+  background: url("../img/sprite-icons.png") -335px 0px no-repeat;
+}
+
+.dropdown-sidebar__item ul li {
+  background: $black;
+  width: 390px;
+}
+
+/*2th level*/
+
+ul.dropdown-sidebar li {
+  position: relative;
+  // background: #39393c;
+}
+
+.dropdown-sidebar,
+.dropdown-sidebar ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.dropdown-sidebar ul {
+  position: absolute;
+  z-index: 5; 
+  margin-left: 0;
+  left: 350px;
+  top: 0;
+  display: none;
+  width: 200px;
+  padding: 0;
+}
+
+.dropdown-sidebar ul li {
+  display: inline;
+  float: right;
+  // width: 100%;
+  width: 200px;
+  margin-right: 0;
+}
+
+.dropdown-sidebar ul li a {
+  @extend %fontTextDropdown;
+  display: block;
+  width: 200px;
+  border-radius: 10px;
+  margin: 5px 0 5px -15px;
+  background: url("../img/bg-wood.png") no-repeat;
+  background-position: center center;
+  border-bottom: 3px solid transparent;
+}
+
+.dropdown-sidebar ul li a:hover {
+  background: lighter(#39393c, 20%);
+}
+
+.dropdown-sidebar li:hover > ul {
+  display: block;
+}
+
+.item-text {
+  width: 800px;
+  float: left;
+  margin-left: 60px;
+}
+
+.item-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.item-slider {
+  height: 255px;
+  margin: 20px 0;
+}
+.item-slider__list {
+  width: 800px;
+  margin-left: 41px;
+}
+
+.item-slider__list li {
+  width: 215px;
+  display: inline-block;
+  margin-right: 10px; 
+  color: #fff;
+}
+
+.item-slider__list li:last-child {
+  margin-right: 0px;
+}
+
+.item-slider__list li img {
+  border-radius: 10px;
+}
 
 
 
