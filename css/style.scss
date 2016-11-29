@@ -1049,13 +1049,10 @@ ul.dropdown-sidebar li {
   display: table;
   clear: both;
 }
-.item-slider {
-  height: 255px;
-  margin: 20px 0;
-}
+
 .item-slider__list {
   width: 800px;
-  margin-left: 41px;
+  margin: 0px 20px;
 }
 
 .item-slider__list li {
@@ -1073,7 +1070,31 @@ ul.dropdown-sidebar li {
   border-radius: 10px;
 }
 
+.slider {
+}
 
+.slider-header {
+  @extend %fontTextDropdown;
+  height: 55px;
+  line-height: 55px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: url("../img/bg-wood-all.jpg") no-repeat;
+  background-position: center center;
+}
+
+.slider-header span {
+  padding: 0 25px;
+}
+
+.slider-header a {
+  @extend %fontHeaderMenu;
+  display: block;
+  width: 150px;
+  float: right;
+  border-left: 3px solid #63492f;
+  padding: 0 0 0 15px;
+}
 
 
 

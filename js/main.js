@@ -1,4 +1,10 @@
 $(document).ready(function(){
-  $('.item-slider').bxSlider({
+  $('#item-slider1').bxSlider({
+  });
+
+  $('#item-slider2').bxSlider({
+  });
+
+  $('#item-slider3').bxSlider({
   });
 });
