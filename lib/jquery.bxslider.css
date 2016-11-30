@@ -92,7 +92,8 @@
 
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: transparent;
-  text-indent: 9999px;
+  text-indent: -9999px;
+  color: transparent;
   display: block;
   width: 12px;
   height: 12px;
